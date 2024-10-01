@@ -1,0 +1,45 @@
+.spoiler {
+    padding: 1px;
+    border: thin solid black;
+}
+.spoiler > h6 {
+    background-color: lightgrey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+    line-height: 18pt;;
+    padding: 2pt 6pt 2pt 18pt;
+    margin: 0px;
+    position: relative;
+    cursor: pointer;
+}
+.spoiler > h6::before {
+    content: '+';
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18pt;
+    display: block;
+    position: absolute;
+    left: 4pt;
+    top: 3pt;
+}
+.spoiler.opened > h6::before {
+    content: '-';
+}
+.spoiler > div {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+.spoiler.opened > div {
+    max-height: 500px;
+    transition: max-height 0.5s;
+}
+.spoiler > div > div {
+    padding: 8pt;
+}
+.highlighted {
+    border-width: thick;
+}
+.highlighted > h6 {
+    color: white;
+    background-color: black;;
+}
